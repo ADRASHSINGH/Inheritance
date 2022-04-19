@@ -1,0 +1,55 @@
+
+
+#include <iostream>
+
+using namespace std;
+class base{
+  
+   int priv;
+  public:
+ 
+      base(){
+        cout << "base default constructor"<<endl;
+    }
+  base(int x){
+      
+      priv = x;
+      cout << "inside base class " << endl;
+  }
+
+    
+};
+
+class derived  : public base {
+    
+    public :
+    int pub_der;
+    
+    derived(){
+        
+        cout << "Derived default constructor "<<endl;
+    }
+    derived(int x , int y ):base(y){
+         cout << "inside derived class " << endl;
+         
+        pub_der =x;
+    }
+    
+};
+
+
+
+int main()
+{
+    derived d2; // Base constructor will be invoked
+
+    base b(23);
+  
+    
+    derived d(12,34);  // setting base parameterized constructor using derived one
+
+    
+
+    
+    return 0;
+}
