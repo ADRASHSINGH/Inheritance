@@ -1,0 +1,73 @@
+// parent class - can be more than 1 
+// base class - only 1
+
+
+
+
+#include <iostream>
+
+using namespace std;
+class base1{
+  
+   
+  public:
+ 
+      base1(){
+        cout << "Base class 1 default constructor"<<endl;
+    }
+  base1(int x){
+      
+      
+      cout << "Inside base class 1 parameterized constructor " << endl;
+  }
+
+    
+};
+
+class base2{
+  
+   
+  public:
+ 
+      base2(){
+        cout << "Base class 2 default constructor"<<endl;
+    }
+  base2(int x){
+      
+      
+      cout << "Inside base class 2 parameterized constructor " << endl;
+  }
+
+    
+};
+
+class derived  : public base1, public base2 {
+    
+    public :
+    int pub_der;
+    
+    derived(){
+        
+        cout << "Derived default constructor "<<endl;
+    }
+    derived(int x ,int y, int z):base2(y),base1(z){
+         cout << "inside derived class " << endl;
+         
+        pub_der =x;
+    }
+    
+};
+
+
+
+int main()
+{
+
+derived d1;
+
+derived d2(12,13,15);
+    
+
+    
+    return 0;
+}
